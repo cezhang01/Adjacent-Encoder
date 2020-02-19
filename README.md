@@ -29,11 +29,12 @@ Adjacent-Encoder is a topic model that extracts topics for networked documents f
 ## Data
 We extracted four independent datasets (DS, HA, ML, and PL) from source Cora (http://people.cs.umass.edu/~mccallum/data/cora-classify.tar.gz).
 
-In `./cora` file we release these datasets, each of which contains adjacency matrix, content, label, and vocabulary.
+In `./cora` file we release these datasets, each of which contains adjacency matrix, content, label, label name, and vocabulary.
 
 - adjacency matrix (NxN): a 0-1 symmetric matrix (A^T==A), and its diagonal elements are supposed to be 1.
 - content (Nx|V|): each row is a Bag-of-Words representation of the corresponding document, and each column is a word in the vocabulary. Documents are represented by the word count.
 - label (Nx1): label or category of each document.
+- label name: the name of each label.
 - vocabulary (|V|x1): words.
 
 ## Reference
