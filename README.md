@@ -37,6 +37,7 @@ In `./cora` file we release these datasets, each of which contains adjacency mat
 
 ## Reference
 If you use our paper, including code and data, please cite
+
 `@inproceedings{adjenc,
     title={Topic Modeling on Document Networks with Adjacent-Encoder},
     author={Zhang, Ce and Lauw, Hady W},
