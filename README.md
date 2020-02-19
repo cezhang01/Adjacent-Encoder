@@ -2,6 +2,8 @@
 This is the tensorflow implementation of the AAAI-2020 paper "Topic Modeling on Document Networks with Adjacent-Encoder" by Ce Zhang and Hady W. Lauw.
 
 Adjacent-Encoder is a topic model that extracts topics for networked documents for document classification, clustering, link prediction, etc.
+
+![](C:\Users\cezhang.2018\Dropbox\_shared\Papers\aaai20_adjacent_encoder\camera_ready\AAAI-ZhangC.2977\model_comparison)
 ## Implementation Environment
 - Python == 3.6
 - Tensorflow == 1.9.0
@@ -28,8 +30,8 @@ In `./cora` file we release these datasets, each of which contains adjacency mat
 
 - adjacency matrix (NxN): should be symmetric (A^T==A), and its diagonal elements should be 1.
 - content (Nx|V|): each row is a Bag-of-Words representation of the corresponding document, and each column is a word in the vocabulary. Documents are represented by the word count.
-- label: label or category of each document.
-- vocabulary: words.
+- label (Nx1): label or category of each document.
+- vocabulary (|V|x1): words.
 ## Reference
 If you use our paper, including code and data, please cite
 `@inproceedings{adjenc,
