@@ -30,7 +30,7 @@ We extracted four independent datasets (DS, HA, ML, and PL) from source Cora (ht
 
 In `./cora` file we release these datasets, each of which contains adjacency matrix, content, label, and vocabulary.
 
-- adjacency matrix (NxN): should be symmetric (A^T==A), and its diagonal elements should be 1.
+- adjacency matrix (NxN): a 0-1 symmetric matrix (A^T==A), and its diagonal elements are supposed to be 1.
 - content (Nx|V|): each row is a Bag-of-Words representation of the corresponding document, and each column is a word in the vocabulary. Documents are represented by the word count.
 - label (Nx1): label or category of each document.
 - vocabulary (|V|x1): words.
@@ -38,9 +38,11 @@ In `./cora` file we release these datasets, each of which contains adjacency mat
 ## Reference
 If you use our paper, including code and data, please cite
 
-`@inproceedings{adjenc,
+```
+@inproceedings{adjenc,
     title={Topic Modeling on Document Networks with Adjacent-Encoder},
     author={Zhang, Ce and Lauw, Hady W},
     booktitle={Thirty-fourth AAAI conference on artificial intelligence},
     year={2020}
-}`
+}
+```
