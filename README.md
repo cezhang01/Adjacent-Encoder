@@ -3,13 +3,14 @@ This is the tensorflow implementation of the AAAI-2020 paper "Topic Modeling on 
 
 Adjacent-Encoder is a topic model that extracts topics for networked documents for document classification, clustering, link prediction, etc.
 
-![](C:\Users\cezhang.2018\Dropbox\_shared\Papers\aaai20_adjacent_encoder\camera_ready\AAAI-ZhangC.2977\model_comparison.pdf)
 ## Implementation Environment
 - Python == 3.6
 - Tensorflow == 1.9.0
 - Numpy == 1.17.4
+
 ## Run
 `python main.py`
+
 ### Parameter Setting
 - -lr: learning rate, default=0.001
 - -ne: number of epoch, default=1000
@@ -23,6 +24,7 @@ Adjacent-Encoder is a topic model that extracts topics for networked documents f
 - -c: contractive regularizer for Contractive Adjacent-Encoder(-X), best performance = 1e-11, if do not want to use contractive variant, set this value to 0, default=0
 - -sp: 0 == no k-sparse, 1 == K-Sparse Adjacent-Encoder(-X), default=0
 - -k: number of nonzero hidden neurons of K-Sparse Adjacent-Encoder(-X), if do not use k-sparse variant, set above argument -sp to 0, default=0.5 * num_topics
+
 ## Data
 We extracted four independent datasets (DS, HA, ML, and PL) from source Cora (http://people.cs.umass.edu/~mccallum/data/cora-classify.tar.gz).
 
@@ -32,6 +34,7 @@ In `./cora` file we release these datasets, each of which contains adjacency mat
 - content (Nx|V|): each row is a Bag-of-Words representation of the corresponding document, and each column is a word in the vocabulary. Documents are represented by the word count.
 - label (Nx1): label or category of each document.
 - vocabulary (|V|x1): words.
+
 ## Reference
 If you use our paper, including code and data, please cite
 `@inproceedings{adjenc,
