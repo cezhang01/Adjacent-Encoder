@@ -3,7 +3,6 @@ import numpy as np
 import time
 from classification import classification_knn
 from clustering import clustering_kmeans
-from parametric_tsne import ParametricTSNE
 
 
 class adjacent_encoder():
@@ -29,7 +28,10 @@ class adjacent_encoder():
         self.num_epoch = args.num_epoch
         self.trans_induc = args.trans_induc
         self.x = args.x
-        self.training_ratio = args.training_ratio
+        if self.trans_induc == 'transductive':
+            self.training_ratio = 1
+        else:
+            self.training_ratio = args.training_ratio
         self.minibatch_size = args.minibatch_size
         self.num_topics = args.num_topics
 
@@ -226,13 +228,15 @@ class adjacent_encoder():
                         classification_knn(self.trans_induc, X_train=doc_embed_training, X_test=doc_embed_test, Y_train=self.data.label_training, Y_test=self.data.label_test)
                         clustering_kmeans(self.trans_induc, X_train=doc_embed_training, X_test=doc_embed_test, Y_train=self.data.label_training, Y_test=self.data.label_test)
 
-                    np.savetxt('./results/' + self.dataset_name + '_' + str(self.num_topics) + '_training.txt', doc_embed_training, delimiter='\t')
-                    np.savetxt('./results/' + self.dataset_name + '_' + str(self.num_topics) + '_test.txt', doc_embed_test, delimiter='\t')
+                    x = '' if self.x == 0 else '_x'
+                    np.savetxt('./results/' + self.trans_induc + '/' + self.dataset_name + '_' + str(self.num_topics) + '_training_adjenc' + x + '.txt', doc_embed_training, delimiter='\t')
+                    np.savetxt('./results/' + self.trans_induc + '/' + self.dataset_name + '_' + str(self.num_topics) + '_test_adjenc' + x + '.txt', doc_embed_test, delimiter='\t')
 
             print('Finish training! Training time:', time.time() - t)
 
             doc_embed_training = sess.run(self.doc_embed, feed_dict={self.doc: self.data.input_training, self.sm: 0})
             doc_embed_test = sess.run(self.doc_embed, feed_dict={self.doc: self.data.input_test, self.sm: 0})
-            np.savetxt('./results/' + self.dataset_name + '_' + str(self.num_topics) + '_training.txt', doc_embed_training, delimiter='\t')
-            np.savetxt('./results/' + self.dataset_name + '_' + str(self.num_topics) + '_test.txt', doc_embed_test, delimiter='\t')
+            x = '' if self.x == 0 else '_x'
+            np.savetxt('./results/' + self.trans_induc + '/' + self.dataset_name + '_' + str(self.num_topics) + '_training_adjenc' + x + '.txt', doc_embed_training, delimiter='\t')
+            np.savetxt('./results/' + self.trans_induc + '/' + self.dataset_name + '_' + str(self.num_topics) + '_test_adjenc' + x + '.txt', doc_embed_test, delimiter='\t')
             print('Finish saving embeddings!')
