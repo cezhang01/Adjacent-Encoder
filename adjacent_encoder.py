@@ -229,14 +229,14 @@ class adjacent_encoder():
                         clustering_kmeans(self.trans_induc, X_train=doc_embed_training, X_test=doc_embed_test, Y_train=self.data.label_training, Y_test=self.data.label_test)
 
                     x = '' if self.x == 0 else '_x'
-                    np.savetxt('./results/' + self.trans_induc + '/' + self.dataset_name + '_' + str(self.num_topics) + '_training_adjenc' + x + '.txt', doc_embed_training, delimiter='\t')
-                    np.savetxt('./results/' + self.trans_induc + '/' + self.dataset_name + '_' + str(self.num_topics) + '_test_adjenc' + x + '.txt', doc_embed_test, delimiter='\t')
+                    np.savetxt('./results/' + self.trans_induc + '_' + self.dataset_name + '_' + str(self.num_topics) + '_training_adjenc' + x + '.txt', doc_embed_training, delimiter='\t')
+                    np.savetxt('./results/' + self.trans_induc + '_' + self.dataset_name + '_' + str(self.num_topics) + '_test_adjenc' + x + '.txt', doc_embed_test, delimiter='\t')
 
             print('Finish training! Training time:', time.time() - t)
 
             doc_embed_training = sess.run(self.doc_embed, feed_dict={self.doc: self.data.input_training, self.sm: 0})
             doc_embed_test = sess.run(self.doc_embed, feed_dict={self.doc: self.data.input_test, self.sm: 0})
             x = '' if self.x == 0 else '_x'
-            np.savetxt('./results/' + self.trans_induc + '/' + self.dataset_name + '_' + str(self.num_topics) + '_training_adjenc' + x + '.txt', doc_embed_training, delimiter='\t')
-            np.savetxt('./results/' + self.trans_induc + '/' + self.dataset_name + '_' + str(self.num_topics) + '_test_adjenc' + x + '.txt', doc_embed_test, delimiter='\t')
+            np.savetxt('./results/' + self.trans_induc + '_' + self.dataset_name + '_' + str(self.num_topics) + '_training_adjenc' + x + '.txt', doc_embed_training, delimiter='\t')
+            np.savetxt('./results/' + self.trans_induc + '_' + self.dataset_name + '_' + str(self.num_topics) + '_test_adjenc' + x + '.txt', doc_embed_test, delimiter='\t')
             print('Finish saving embeddings!')
