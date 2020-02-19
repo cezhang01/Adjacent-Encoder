@@ -4,6 +4,7 @@ This is the tensorflow implementation of the AAAI-2020 paper "[Topic Modeling on
 Adjacent-Encoder is a topic model that extracts topics for networked documents for document classification, clustering, link prediction, etc.
 
 ![](/figure/model_comparison.jpg)
+
 ## Implementation Environment
 - Python == 3.6
 - Tensorflow == 1.9.0
@@ -33,12 +34,14 @@ In `./cora` file we release these datasets, each of which contains adjacency mat
 
 - adjacency matrix (NxN): a 0-1 symmetric matrix (A^T==A), and its diagonal elements are supposed to be 1.
 - content (Nx|V|): each row is a Bag-of-Words representation of the corresponding document, and each column is a word in the vocabulary. Documents are represented by the word count.
-- label (Nx1): label or category of each document.
+- label (Nx1): label or category of each document. Labels are used only for evaluation, not for learning in our model.
 - label name: the name of each label.
 - vocabulary (|V|x1): words.
 
 ## Output
-The document embeddings (Nxnum_topics) are output to the `./results` file. Each row represents one document embedding, and each column represents one dimension of the embedding, or one topic.
+The document embeddings are output to the `./results` file. Each row represents one document embedding, and each column represents one dimension of the embedding, or one topic.
+
+In transductive learning, training embeddings are the same as test embeddings. In inductive learning, training embeddings are those of training documents (no validation documents), and testing embeddings are inferred for testing documents.
 
 ## Reference
 If you use our paper, including code and data, please cite
