@@ -38,7 +38,7 @@ In `./cora` file we release these datasets, each of which contains adjacency mat
 - vocabulary (|V|x1): words.
 
 ## Output
-The document embeddings (Nxnum_topics) are output to the `./results` file. Each row represents the embedding of one document, and each column represents one dimension of the embedding, or one topic.
+The document embeddings (Nxnum_topics) are output to the `./results` file. Each row represents one document embedding, and each column represents one dimension of the embedding, or one topic.
 
 ## Reference
 If you use our paper, including code and data, please cite
