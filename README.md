@@ -17,7 +17,7 @@ Adjacent-Encoder is a topic model that extracts topics for networked documents f
 - -ti: transductive or inductive learning, transductive means we input all documents and links for unsupervised training, inductive means we split 80% for training, 20% for test, default=inductive
 - -dn: dataset name
 - -nt: number of topics, default=64
-- -x: Adjacent-Encoder or Adjacent-Encoder-X, 0 == Adjacent-Encoder, 1 == Adjacent-Encoder-X, default=0 (Adjacent-Encoder)
+- -x: 0 == Adjacent-Encoder, 1 == Adjacent-Encoder-X, default=0 (Adjacent-Encoder)
 - -tr: training ratio, this program will automatically split 10% among training set for validation, default=0.8
 - -ms: minibatch size, default=128
 - -sm: gaussian std.dev. (sigma) used for Denoising Adjacent-Encoder(-X), if do not want to use denoising variant, set this value to 0, default=0
