@@ -1,7 +1,7 @@
 # Adjacent-Encoder
 This is the tensorflow implementation of the AAAI-2020 paper "[Topic Modeling on Document Networks with Adjacent-Encoder](/figure/AAAI20-Adjacent-Encoder.pdf)" by Ce Zhang and Hady W. Lauw.
 
-Adjacent-Encoder is a topic model that extracts topics for networked documents for document classification, clustering, link prediction, etc.
+Adjacent-Encoder is a neural topic model that extracts topics for networked documents for document classification, clustering, link prediction, etc.
 
 ![](/figure/model_comparison.jpg)
 
