@@ -1,0 +1,7 @@
+1 = neural_networks
+2 = case-based
+3 = rule_learning
+4 = theory
+5 = genetic_algorithms
+6 = reinforcement_learning
+7 = probabilistic_methods
