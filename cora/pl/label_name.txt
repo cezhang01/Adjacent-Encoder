@@ -1,0 +1,9 @@
+1 = functional
+2 = semantics
+3 = debugging
+4 = object_oriented
+5 = garbage_collection
+6 = java
+7 = logic
+8 = software_development
+9 = compiler_design
