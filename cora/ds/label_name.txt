@@ -1,0 +1,9 @@
+1 = parallel
+2 = computational_geometry
+3 = quantum_computing
+4 = randomized
+5 = formal_languages
+6 = hashing
+7 = computational_complexity
+8 = logic
+9 = sorting
