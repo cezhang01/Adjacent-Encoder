@@ -1,0 +1,6 @@
+1 = logic_design
+2 = high_performance_computing
+3 = vlsi
+4 = input_output_and_storage
+5 = memory_structures
+6 = microprogramming
