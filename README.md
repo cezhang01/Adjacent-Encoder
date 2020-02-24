@@ -28,7 +28,7 @@ Adjacent-Encoder is a neural topic model that extracts topics for networked docu
 - -k: number of nonzero hidden neurons of K-Sparse Adjacent-Encoder(-X), if do not use k-sparse variant, set above argument -sp to 0, default = 0.5 * num_topics
 
 ## Data
-We extracted four independent datasets (DS, HA, ML, and PL) from source Cora (http://people.cs.umass.edu/~mccallum/data/cora-classify.tar.gz).
+We extracted four independent citation networks (DS, HA, ML, and PL) from source Cora (http://people.cs.umass.edu/~mccallum/data/cora-classify.tar.gz).
 
 In `./cora` file we release these datasets, each of which contains adjacency matrix, content, label, label name, and vocabulary.
 
