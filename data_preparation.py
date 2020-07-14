@@ -41,8 +41,8 @@ class Data():
             self.doc_training, self.doc_test = self.doc[:int(self.num_doc * self.training_ratio)], self.doc[int(self.num_doc * (self.training_ratio + self.validation_ratio)):]
             self.label_training, self.label_test = self.label[:int(self.num_doc * self.training_ratio)], self.label[int(self.num_doc * (self.training_ratio + self.validation_ratio)):]
             self.adjacency_matrix_training, self.adjacency_matrix_test = \
-                self.adjacency_matrix[:int(self.num_doc * self.training_ratio)][:int(self.num_doc * self.training_ratio)], \
-                self.adjacency_matrix[int(self.num_doc * (self.training_ratio + self.validation_ratio)):][:int(self.num_doc * self.training_ratio)]
+                self.adjacency_matrix[:int(self.num_doc * self.training_ratio), :int(self.num_doc * self.training_ratio)], \
+                self.adjacency_matrix[int(self.num_doc * (self.training_ratio + self.validation_ratio)):, :int(self.num_doc * self.training_ratio)]
             self.links_training, self.links_test = self.split_links(self.links)
 
         self.num_minibatch = int(np.ceil(len(self.links_training) / self.minibatch_size))
